@@ -35,8 +35,5 @@ dotnet add Persistence/Persistence.csproj reference Domain/Domain.csproj
 echo -e "${green}Executing Restore${reset}"
 dotnet restore
 
-echo -e "${green}Finished!${reset}"
-
-
-
-
+echo -e "${green}FINISHED! (Listing Solution Linked Projects)${reset}"
+dotnet sln list
