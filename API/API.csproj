@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings> // grabbed from auto generated obj/Debug/net8.0/API.GlobalUsings.g.cs
+    <ImplicitUsings>enable</ImplicitUsings> <!--> grabbed from auto generated obj/Debug/net8.0/API.GlobalUsings.g.cs <-->
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
