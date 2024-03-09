@@ -4,6 +4,7 @@
 
 public class Activity
 {
+    [System.ComponentModel.DataAnnotations.Key] // not really required, as using convention "Id"
     public Guid Id { get; set; } // By Convention for PK (EF)
     public string Title { get; set; }
     public DateTime Date { get; set; }

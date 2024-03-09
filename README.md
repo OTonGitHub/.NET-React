@@ -18,9 +18,21 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - Test Note.
 - Global using property, grabs using from aut-generated file in -> `obj/Debug/net8.0/API.GlobalUsings.g.cs`
 - API has transitive dependency on persistene, via Application. But will need `dotnet restore` run on solution, to access packages on the other projects.
+- Startup project must have nuget package `Microsoft.EntityFrameworkCore.Design` installed, in order to create migrations in that project.
+- Because nullable was disabled, tables created, with string properties have nullable set to true, as default is nullable.
 
 ### Commands
 
+- For commands to run for project setup, see `OT-ProjectSetup.sh`
 - Run startup project `dotnet run --project API`
 - `dotnet add /workspaces/NETReact-Server/Persistence/Persistence.csproj package Microsoft.EntityFrameworkCore.Sqlite -v 8.0.1 -s https://api.nuget.org/v3/index.json `
-  - adds reference in .csproj
+  - adds reference in Persistence .csproj
+- to list available dotnet tools -> `dotnet tool list -g`
+- for global tool installs, https://www.nuget.org/packages/dotnet-ef
+  - `dotnet tool install --global dotnet-ef --version 8.0.1`
+  - probably have to match runtime version of .NET, but not sure about EF core version for projects
+  - you can check available dotnet-ef commands in the nuget page as well.
+  - update by doing `dotnet tool update` instead of `install`
+- for initial migration `dotnet ef migrations add InitialCreate -s API -p Persistence`
+- `dotnet add /workspaces/NETReact-Server/API/API.csproj package Microsoft.EntityFrameworkCore.Design -v 8.0.1 -s https://api.nuget.org/v3/index.json`
+  - adds reference in API .csproj
