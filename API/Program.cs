@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 // creates kestrel
 // reads configuration
@@ -8,6 +11,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+}); // transitive dependency to persistece via application.
+    // hence, EFCore and Persistence are available here, even though this project only depends on Application project.
 
 var app = builder.Build();
 
@@ -18,7 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection(); // Switched Off For Development, See launchSettings.json
+// app.UseHttpsRedirection(); // switched off for development, see launchSettings.json
 
 app.UseAuthorization();
 

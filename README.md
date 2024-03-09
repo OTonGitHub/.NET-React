@@ -17,7 +17,10 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
   - the `name =  ` atribute in HttpGet() is not for route, but URL generation.
 - Test Note.
 - Global using property, grabs using from aut-generated file in -> `obj/Debug/net8.0/API.GlobalUsings.g.cs`
+- API has transitive dependency on persistene, via Application. But will need `dotnet restore` run on solution, to access packages on the other projects.
 
 ### Commands
 
 - Run startup project `dotnet run --project API`
+- `dotnet add /workspaces/NETReact-Server/Persistence/Persistence.csproj package Microsoft.EntityFrameworkCore.Sqlite -v 8.0.1 -s https://api.nuget.org/v3/index.json `
+  - adds reference in .csproj
