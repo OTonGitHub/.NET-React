@@ -1,6 +1,7 @@
 ﻿namespace Domain;
 
 #nullable disable
+// in the course, asked to disable in .csproj, it's a new feature.
 
 public class Activity
 {

@@ -36,3 +36,4 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - for initial migration `dotnet ef migrations add InitialCreate -s API -p Persistence`
 - `dotnet add /workspaces/NETReact-Server/API/API.csproj package Microsoft.EntityFrameworkCore.Design -v 8.0.1 -s https://api.nuget.org/v3/index.json`
   - adds reference in API .csproj
+- `dotnet watch --project API`
