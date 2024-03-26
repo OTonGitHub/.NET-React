@@ -37,3 +37,4 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - `dotnet add /workspaces/NETReact-Server/API/API.csproj package Microsoft.EntityFrameworkCore.Design -v 8.0.1 -s https://api.nuget.org/v3/index.json`
   - adds reference in API .csproj
 - `dotnet watch --project API`
+- Had issue with ConString, use `dotnet watch --project API run --environment "Development"` instead.
