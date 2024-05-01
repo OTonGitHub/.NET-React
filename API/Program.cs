@@ -38,7 +38,8 @@ var services = scope.ServiceProvider;
 try
 {
     var context = services.GetRequiredService<DataContext>();
-    context.Database.Migrate(); // update migrations, create DB if not exist
+    await context.Database.MigrateAsync(); // update migrations, create DB if not exist
+    await Seed.SeedDataAsync(context);
 }
 catch (Exception ex)
 {

@@ -38,3 +38,5 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
   - adds reference in API .csproj
 - `dotnet watch --project API`
 - Had issue with ConString, use `dotnet watch --project API run --environment "Development"` instead.
+- Hot reload still have some issues, Author complaisn about .NET 7, I have issues in .NET 8.
+  - So add the `--no-hot-reload` flag to watch command
