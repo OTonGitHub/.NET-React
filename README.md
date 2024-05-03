@@ -63,3 +63,13 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
   - and name project React-UI (will create folder)
 - `npm install --prefix React-UI/`
 - `npm run --prefix React-UI dev`
+- all dependencies are inside `package.json` file.
+  - node_modules contains them, not needed for src control.
+- updated `package.json` so can just run app using
+  - `npm start --prefix React-UI`
+
+### React
+
+- check Assets vs Public folder for serving media.
+- `tsconfig.json` for TypeScript specific settings
+- `vite.config.ts` for configuring vite, like serving port
