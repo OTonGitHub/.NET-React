@@ -61,3 +61,5 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - using Vite docs to create react app
   - `npm create vite@latest`
   - and name project React-UI (will create folder)
+- `npm install --prefix React-UI/`
+- `npm run --prefix React-UI dev`
