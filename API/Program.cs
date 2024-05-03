@@ -33,18 +33,21 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Running Migrations
-using var scope = app.Services.CreateScope();
-var services = scope.ServiceProvider;
-try
+if (app.Environment.IsDevelopment())
 {
-    var context = services.GetRequiredService<DataContext>();
-    await context.Database.MigrateAsync(); // update migrations, create DB if not exist
-    await Seed.SeedDataAsync(context);
-}
-catch (Exception ex)
-{
-    var logger = services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "Error Running Startup Migrations :(");
+    using var scope = app.Services.CreateScope();
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<DataContext>();
+        await context.Database.MigrateAsync(); // update migrations, create DB if not exist
+        await Seed.SeedDataAsync(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Error Running Startup Migrations :(");
+    }
 }
 
 app.Run();
