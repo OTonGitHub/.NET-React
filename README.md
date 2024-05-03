@@ -44,3 +44,13 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - Had issue with ConString, use `dotnet watch --project API run --environment "Development"` instead.
 - Hot reload still have some issues, Author complaisn about .NET 7, I have issues in .NET 8.
   - So add the `--no-hot-reload` flag to watch command
+
+### Node
+
+- to check version: `node --version`
+- in CODESPACE, nvm seems to be installed by default. (I assume its auto-updating)
+- run `nvm install --lts` to install latest lts
+- run `nvm use --lts` to use latest lts
+- <strike>I have saved node version used for project using `node --version > .nvmrc`</strike>
+  - actually, this does-not work for some reason, just specified current version.
+- you can then use it using `nvm use`
