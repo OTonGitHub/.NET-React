@@ -74,3 +74,5 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - check Assets vs Public folder for serving media.
 - `tsconfig.json` for TypeScript specific settings
 - `vite.config.ts` for configuring vite, like serving port
+- access modifiers in TypeScript gets removed when compiled to javascript as it is not supported in javascript
+  - just there for developer protection.
