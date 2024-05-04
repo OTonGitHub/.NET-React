@@ -26,6 +26,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - issues in `dotnet watch` not grabbing newly added routes, shown in tutorial, but not tested in project yet, likely not to work.
 - using global .gitignore because, some extension related files are created on root and applies for both .NET and React stuff. It's just easier to keep it in one place since this file won't be edited often
 - `.nvmrc` file is also kept in root because all commands are meant to be run from the root, and node version is set from root of project in this case.
+- decided to maybe not disable telemtry for dotnet CLI when working in a codespace, to support .NET development.
 
 ### Commands
 
