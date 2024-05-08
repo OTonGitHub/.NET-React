@@ -40,7 +40,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
     - Query
       - Answers a question, NO staates modified, should return a value.
     - <img src=README.imgs/image-3.png width=340/>
-      > typical database, single, optimized for read & write, not specific.
+    > typical database, single, optimized for read & write, not specific.
     - <img src=README.imgs/image-4.png width=340/>
 
 ### Notes
