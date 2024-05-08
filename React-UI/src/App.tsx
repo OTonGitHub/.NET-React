@@ -1,6 +1,15 @@
 import React from 'react';
 import './App.css';
 import { ducks } from './Sandbox/demo';
+import DuckBox from './Sandbox/DuckBox';
+import OTCard, { OTi } from './OT/OT';
+
+const OT: OTi = {
+  NID: "A000001",
+  name: "OT'iana",
+  currency: "MVR",
+  price: 200
+}
 
 function App() {
   return (
@@ -15,17 +24,13 @@ function App() {
       {console.log('App.tsx')}
       {/* map: callback function on iter */}
       {/*ducks.map((duck) => duck.makeSound("APP"))*/}
+      {/* "intrinsic attributes" means prop passed to html not supported */}
       {ducks.map((duck) => (
-        <div key={duck.name}>
-          {/* need key for looping elements in jsx */}
-          <span>{duck.name}</span>
-          {/* call back needed for on click */}
-          {/* Because, requires a function reference, not  a call */}
-          <button onClick={() => duck.makeSound(duck.name + ': ' + 'quack')}>
-            Make Sound
-          </button>
-        </div>
+        <DuckBox duck={duck} key={duck.name} />
       ))}
+
+      <h1>OT Card</h1>
+      <OTCard OT={OT}/>
     </>
   );
 }
