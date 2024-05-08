@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { ducks } from './Sandbox/demo';
 import DuckBox from './Sandbox/DuckBox';
 import OTCard, { OTi } from './OT/OT';
 
 const OT: OTi = {
-  NID: "A000001",
+  NID: 'A000001',
   name: "OT'iana",
-  currency: "MVR",
-  price: 200
-}
+  currency: 'MVR',
+  price: 200,
+};
 
 function App() {
+  const [activities, setActivities] = useState([]);
+  
   return (
     // returns JSX, cannot return siblings.
     <>
@@ -28,9 +30,8 @@ function App() {
       {ducks.map((duck) => (
         <DuckBox duck={duck} key={duck.name} />
       ))}
-
       <h1>OT Card</h1>
-      <OTCard OT={OT}/>
+      <OTCard OT={OT} />
     </>
   );
 }

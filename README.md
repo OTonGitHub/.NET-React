@@ -71,8 +71,19 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 
 ### React
 
+- Highly recommended to go through `https://www.youtube.com/watch?v=_aCqyBPZftE&list=PL82C6-O4XrHcNJd4ejg8pX5fZaIDZmXyn&index=3`
+  - don't have to do it, just skimming through, he leaves nice pointers.
 - check Assets vs Public folder for serving media.
 - `tsconfig.json` for TypeScript specific settings
 - `vite.config.ts` for configuring vite, like serving port
 - access modifiers in TypeScript gets removed when compiled to javascript as it is not supported in javascript
   - just there for developer protection.
+- Most comments regarding components etc are left as comments in the `.tsx` files.
+
+### Axios
+
+- promised based HTTP client.
+- JS already has fetch and stuff, and is low level,
+- Axios could be a high level wrapper for this with cool features.
+- Axios uses interceptors, ig kind of like a middleware?
+- `npm install axios --prefix React-UI`
