@@ -4,6 +4,7 @@ import { ducks } from './Sandbox/demo';
 import DuckBox from './Sandbox/DuckBox';
 import OTCard, { OTi } from './OT/OT';
 import axios from 'axios';
+import { Header, List, ListItem } from 'semantic-ui-react';
 
 const OT: OTi = {
   NID: 'A000001',
@@ -24,7 +25,15 @@ function App() {
 
   return (
     // returns JSX, cannot return siblings.
+    // icon = 'users'
     <>
+      <Header as='h1' icon='address card' content='Semantic Header' />
+      <List animated={true} relaxed={true} bulleted={true}>
+        {activities.map((activity: any) => (
+          <ListItem key={activity.id}>{activity.title}</ListItem>
+        ))}
+      </List>
+
       <h1>Reactivities</h1>
       <ul>
         {activities.map((activity: any) => (

@@ -79,6 +79,11 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - access modifiers in TypeScript gets removed when compiled to javascript as it is not supported in javascript
   - just there for developer protection.
 - Most comments regarding components etc are left as comments in the `.tsx` files.
+- Because strict mode is enabled, when app starts, an experiment setup is run first, then real one will start, for development.
+- `npm install semantic-ui-react@3.0.0-beta.2  semantic-ui-css --prefix React-UI`
+- can disable strict mode by removing the element in `main.tsx`
+  - this is a caveat for useEffect afik, to test cleanup cycle.
+- using the dev tools, state can be directly updated, for example, in `<App />` the request response hooks states can be updated to change the list.
 
 ### Axios
 
@@ -87,3 +92,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - Axios could be a high level wrapper for this with cool features.
 - Axios uses interceptors, ig kind of like a middleware?
 - `npm install axios --prefix React-UI`
+
+### Semantic-UI
+
+- lots of components have `as` property, which can be an intrinsic property like `<h1> <h2>` etc, but also be another component.
