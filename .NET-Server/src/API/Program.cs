@@ -21,7 +21,7 @@ builder.Services.AddCors(opt =>
     opt.AddPolicy("CorsPolicy", policy =>
     {
         policy.AllowAnyHeader().AllowAnyMethod()
-        .WithOrigins("http://127.0.0.1:3000");
+        .WithOrigins("http://127.0.0.1:3000"); // use configuration?
     });
 });
 
