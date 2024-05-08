@@ -4,8 +4,44 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 
 ### Development Environment
 
+> Refer To Dev Container Environment File.
+
 - Github Codespace
 - VSCode
+
+### Technology
+
+- .NET Core
+  - EF Core
+  - MediatR
+- React
+  - Semantic-UI
+
+### Patterns/Arcitecture
+
+- Domain Driven Design
+  - Folder Structure
+  - Project Depenencies
+- Clean Architecture
+  - <img src=README.imgs/image-1.png width=340/>
+  - <img src=README.imgs/image.png width=340/>
+  - Rules (More like a guideline):
+    - Must be independent from frameworks.
+    - Must be testable without interface adapters or databases.
+    - Must be intependent from interface/UI.
+    - Must be inedependent from database, not ORM.
+  - MediatR
+    - <img src=README.imgs/image-2.png width=340/>
+  - CQRS (Command Query Responsibility Segregation)
+    - Command & Query Seperation.
+    - About flow of data.
+    - Commands
+      - Does something, modifies state, should NOT return value.
+    - Query
+      - Answers a question, NO staates modified, should return a value.
+    - <img src=README.imgs/image-3.png width=340/>
+      > typical database, single, optimized for read & write, not specific.
+    - <img src=README.imgs/image-4.png width=340/>
 
 ### Notes
 
@@ -28,7 +64,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - `.nvmrc` file is also kept in root because all commands are meant to be run from the root, and node version is set from root of project in this case.
 - decided to maybe not disable telemtry for dotnet CLI when working in a codespace, to support .NET development.
 
-### Commands
+### .NET Commands
 
 - For commands to run for project setup, see `OT-ProjectSetup.sh`
 - Run startup project `dotnet run --project API`
