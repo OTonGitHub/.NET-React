@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { ducks } from './Sandbox/demo';
 import DuckBox from './Sandbox/DuckBox';
 import OTCard, { OTi } from './OT/OT';
+import axios from 'axios';
 
 const OT: OTi = {
   NID: 'A000001',
@@ -13,10 +14,24 @@ const OT: OTi = {
 
 function App() {
   const [activities, setActivities] = useState([]);
-  
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/api/activities').then((response) => {
+      setActivities(response.data);
+    });
+    // dependencies, will execute once, then again if deps change.
+  }, []);
+
   return (
     // returns JSX, cannot return siblings.
     <>
+      <h1>Reactivities</h1>
+      <ul>
+        {activities.map((activity: any) => (
+          <li key={activity.id}>{activity.title}</li>
+        ))}
+      </ul>
+
       <h1>The Man In The High Castle</h1>
       {React.createElement(
         'div',

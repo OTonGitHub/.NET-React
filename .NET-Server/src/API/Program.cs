@@ -16,6 +16,14 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 }); // transitive dependency to persistece via application.
     // hence, EFCore and Persistence are available here, even though this project only depends on Application project.
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", policy =>
+    {
+        policy.AllowAnyHeader().AllowAnyMethod()
+        .WithOrigins("http://127.0.0.1:3000");
+    });
+});
 
 var app = builder.Build();
 
@@ -28,6 +36,7 @@ if (app.Environment.IsDevelopment())
 
 // app.UseHttpsRedirection(); // switched off for development, see launchSettings.json
 
+app.UseCors("CorsPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
