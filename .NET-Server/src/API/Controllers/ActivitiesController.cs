@@ -15,9 +15,9 @@ public class ActivitiesController : BaseApiController
     }
 
     [HttpGet("{id}")] // ~/api/activities/GUID
-    public ActionResult<Activity> GetActivity(Guid id) // must match Root Parameter
+    public async Task<ActionResult<Activity>> GetActivity(Guid id) // must match Root Parameter
     {
         Task.Delay(1000).Wait();
-        return Ok();
+        return await Mediator.Send(new Details.Query { Id = id });
     }
 }

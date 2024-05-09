@@ -42,7 +42,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
     - Query
       - Answers a question, NO staates modified, should return a value.
     - <img src=README.imgs/image-3.png width=340/>
-    > typical database, single, optimized for read & write, not specific.
+      > typical database, single, optimized for read & write, not specific.
     - <img src=README.imgs/image-4.png width=340/>
 
 ### Notes
@@ -91,6 +91,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
   - `dotnet watch --no-hot-reload --project .NET-Server/src/API run --environment "Development"` instead
 - `dotnet add /workspaces/.NET-React/.NET-Server/src/Application/Application.csproj package MediatR -v 12.2.0 -s https://api.nuget.org/v3/index.json`
 - use `dotnet build` in project level to update inter-project changes, as references dlls.
+  - keep dotnet watch running during development so inter project changes will be available via dlls.
 
 ### Node
 
