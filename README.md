@@ -19,6 +19,8 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 
 ### Patterns/Arcitecture
 
+- .NET Server, Folder Structure:
+  - <img src=README.imgs/image-5.png width=340/>
 - Domain Driven Design
   - Folder Structure
   - Project Depenencies
@@ -63,6 +65,8 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - using global .gitignore because, some extension related files are created on root and applies for both .NET and React stuff. It's just easier to keep it in one place since this file won't be edited often
 - `.nvmrc` file is also kept in root because all commands are meant to be run from the root, and node version is set from root of project in this case.
 - decided to maybe not disable telemtry for dotnet CLI when working in a codespace, to support .NET development.
+- run `dotnet restore` to get access to dependencies via transititive dependencies.
+- Hmm, it seems if you need nuget package between projects, and if there is a dependency on project level, install in child one, as a `dotnet restore` will pick up packages from dependencies and transitive dependencies? think.
 
 ### .NET Commands
 
@@ -85,6 +89,8 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
   - So add the `--no-hot-reload` flag to watch command
 - updated file structure so use
   - `dotnet watch --no-hot-reload --project .NET-Server/src/API run --environment "Development"` instead
+- `dotnet add /workspaces/.NET-React/.NET-Server/src/Application/Application.csproj package MediatR -v 12.2.0 -s https://api.nuget.org/v3/index.json`
+- use `dotnet build` in project level to update inter-project changes, as references dlls.
 
 ### Node
 

@@ -1,3 +1,4 @@
+using Application.Activities;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -24,6 +25,10 @@ builder.Services.AddCors(opt =>
         .WithOrigins("http://127.0.0.1:3000"); // use configuration?
     });
 });
+// registtering one handler is fine, because from assembly, all handlers in assembly will be picked up.
+builder.Services.AddMediatR(config =>
+    config.RegisterServicesFromAssembly(typeof(Listie.Handler).Assembly)
+);
 
 var app = builder.Build();
 
