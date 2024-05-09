@@ -1,20 +1,17 @@
 using API.Controllers;
 using Application.Activities;
 using Domain;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controller;
 
-public class ActivitiesController(IMediator mediator) : BaseApiController
+public class ActivitiesController : BaseApiController
 {
-    private readonly IMediator _mediator = mediator;
-
     [HttpGet] // ~/api/activities
     public async Task<ActionResult<List<Activity>>> GetActivities()
     {
         Task.Delay(1000).Wait();
-        return await _mediator.Send(new Listie.Query());
+        return await Mediator.Send(new Listie.Query());
     }
 
     [HttpGet("{id}")] // ~/api/activities/GUID
