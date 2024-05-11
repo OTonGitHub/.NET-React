@@ -67,6 +67,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - decided to maybe not disable telemtry for dotnet CLI when working in a codespace, to support .NET development.
 - run `dotnet restore` to get access to dependencies via transititive dependencies.
 - Hmm, it seems if you need nuget package between projects, and if there is a dependency on project level, install in child one, as a `dotnet restore` will pick up packages from dependencies and transitive dependencies? think.
+- Make use of refactor namespace shortcut in vscode, or resharper if using visual studio to save time and avoid wasting time renaming namespaces.
 
 ### .NET Commands
 
@@ -139,3 +140,7 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 ### Semantic-UI
 
 - lots of components have `as` property, which can be an intrinsic property like `<h1> <h2>` etc, but also be another component.
+
+### CQRS Using Mediator
+
+- there is more boiler pattern than using respository class for handling query and commands, this is necessary sacrifies.

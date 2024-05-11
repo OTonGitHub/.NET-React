@@ -1,6 +1,8 @@
 @API_HostAddress = http://localhost:5000
 @Host = localhost:5000
 
+// User-Agent & Accept Fields Not Required? Research.
+
 ### SB-1
 GET {{API_HostAddress}}/Sandbox/
 Accept: application/json
@@ -9,19 +11,19 @@ Accept: application/json
 GET {{API_HostAddress}}/Sandbox/MyEndpoint/
 Accept: application/json
 
-###
+###								GET ALL REQUEST
 GET /api/activities/ HTTP/1.1
 Host: {{Host}}
 User-Agent: insomnia/9.1.1
 Accept: */*
 
-###
-GET /api/activities/06b53b60-26dc-42c0-8ae0-dcac934eacb3 HTTP/1.1
+###								GET SINGLE REQUEST
+GET /api/activities/405936B8-6EE9-4F09-B06F-7275799D8EB4 HTTP/1.1
 Host: {{Host}}
 User-Agent: insomnia/9.1.1
 Accept: */*
 
-###
+###								POST CREATE REQUEST
 POST /api/activities HTTP/1.1
 Host: localhost:5000
 Content-Type: application/json
@@ -32,9 +34,24 @@ Content-Length: 194
 {
     "id": "{{$guid}}",
  	"title": "Past Activity",
- 	"date": "2024-03-01T13:43:45.1985287",
+ 	"date": "{{$localDatetime iso8601 5 d}}",
  	"description": "Activity 2 days ago",
  	"category": "coding",
     "city": "Maldives",
-	"venue": "Godown"
+	"venue": "OT Home"
+}
+
+###								PUT UPDATE REQUEST
+PUT /api/activities/405936B8-6EE9-4F09-B06F-7275799D8EB4 HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json
+Content-Length: 214
+
+{
+	"title": "UPDATED 200",
+	"description": "",
+	"category": "Culture",
+	"date": "{{$localDatetime iso8601 6 M}}",
+	"city": "London",
+	"venue": "Tower of London updated"
 }
