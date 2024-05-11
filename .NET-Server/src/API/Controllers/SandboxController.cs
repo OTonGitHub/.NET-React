@@ -6,16 +6,16 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class SandboxController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<SandboxController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public SandboxController(ILogger<SandboxController> logger)
     {
         _logger = logger;
     }
@@ -32,7 +32,7 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 
-    [HttpGet("MyEp", Name = "BlaBla")]
+    [HttpGet("MyEndpoint", Name = "BlaBla")]
     public IEnumerable<WeatherForecast> GetX()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast

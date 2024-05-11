@@ -1,6 +1,40 @@
-@API_HostAddress = http://localhost:5180
+@API_HostAddress = http://localhost:5000
+@Host = localhost:5000
 
-GET {{API_HostAddress}}/weatherforecast/
+### SB-1
+GET {{API_HostAddress}}/Sandbox/
+Accept: application/json
+
+### SB-2
+GET {{API_HostAddress}}/Sandbox/MyEndpoint/
 Accept: application/json
 
 ###
+GET /api/activities/ HTTP/1.1
+Host: {{Host}}
+User-Agent: insomnia/9.1.1
+Accept: */*
+
+###
+GET /api/activities/06b53b60-26dc-42c0-8ae0-dcac934eacb3 HTTP/1.1
+Host: {{Host}}
+User-Agent: insomnia/9.1.1
+Accept: */*
+
+###
+POST /api/activities HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json
+User-Agent: insomnia/9.1.1
+Accept: */*
+Content-Length: 194
+
+{
+    "id": "{{$guid}}",
+ 	"title": "Past Activity",
+ 	"date": "2024-03-01T13:43:45.1985287",
+ 	"description": "Activity 2 days ago",
+ 	"category": "coding",
+    "city": "Maldives",
+	"venue": "Godown"
+}

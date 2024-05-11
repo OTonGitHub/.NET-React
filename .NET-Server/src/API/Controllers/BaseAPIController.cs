@@ -7,7 +7,7 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 public class BaseApiController(/*IMediator mediator*/) : ControllerBase
 {
-    private IMediator _mediator; // = mediator;
+    private IMediator _mediator; // = mediator
 
     // In case inheriting class already has mediator.
     // Not sure why readonly not available for Mediator here.
