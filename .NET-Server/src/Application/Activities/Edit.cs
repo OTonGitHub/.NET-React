@@ -1,3 +1,4 @@
+using Application.Mappers;
 using Domain;
 using MediatR;
 using Persistence;
@@ -17,10 +18,9 @@ public class Edit
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
             var activity = await _ctx.Activities.FindByIdAsync(request.Activity.Id, cancellationToken);
+            new ActivityMapper().MapActivity(request.Activity);
 
-            activity.Title = request.Activity.Title ?? activity.Title;
-            activity.Description = request.Activity.Id.ToString() ?? "GUID NOT FOUND";
-
+            _ctx.Update(activity);
             await _ctx.SaveChangesAsync(cancellationToken);
         }
     }

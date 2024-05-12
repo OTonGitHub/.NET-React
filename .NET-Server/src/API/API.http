@@ -18,7 +18,7 @@ User-Agent: insomnia/9.1.1
 Accept: */*
 
 ###								GET SINGLE REQUEST
-GET /api/activities/405936B8-6EE9-4F09-B06F-7275799D8EB4 HTTP/1.1
+GET /api/activities/1b2fc87b-d6c3-414c-b6f9-221d274dc02c HTTP/1.1
 Host: {{Host}}
 User-Agent: insomnia/9.1.1
 Accept: */*
@@ -42,7 +42,7 @@ Content-Length: 194
 }
 
 ###								PUT UPDATE REQUEST
-PUT /api/activities/405936B8-6EE9-4F09-B06F-7275799D8EB4 HTTP/1.1
+PUT /api/activities/1b2fc87b-d6c3-414c-b6f9-221d274dc02c HTTP/1.1
 Host: localhost:5000
 Content-Type: application/json
 Content-Length: 214
@@ -53,5 +53,5 @@ Content-Length: 214
 	"category": "Culture",
 	"date": "{{$localDatetime iso8601 6 M}}",
 	"city": "London",
-	"venue": "Tower of London updated"
+	"venue": "Roundhouse Camden - CHANGED"
 }
