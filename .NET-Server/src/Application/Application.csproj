@@ -15,7 +15,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <!-- Set EmitCompilerGeneratedFiles to True Here, To View Mapperly Source Generation. -->
+    <!-- TO VIEW MAPPERLY SOURCE GENERATION-->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 
   </PropertyGroup>
 

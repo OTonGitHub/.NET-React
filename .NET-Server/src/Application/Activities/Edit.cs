@@ -1,4 +1,4 @@
-using Application.Mappers;
+using Application.Core;
 using Domain;
 using MediatR;
 using Persistence;
@@ -18,7 +18,7 @@ public class Edit
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
             var activity = await _ctx.Activities.FindByIdAsync(request.Activity.Id, cancellationToken);
-            new ActivityMapper().MapActivity(request.Activity);
+            ActivityMapper.UpdateActivity(request.Activity, activity);
 
             _ctx.Update(activity);
             await _ctx.SaveChangesAsync(cancellationToken);

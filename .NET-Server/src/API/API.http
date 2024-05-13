@@ -18,7 +18,7 @@ User-Agent: insomnia/9.1.1
 Accept: */*
 
 ###								GET SINGLE REQUEST
-GET /api/activities/1b2fc87b-d6c3-414c-b6f9-221d274dc02c HTTP/1.1
+GET /api/activities/04b4d048-d182-41ee-9bd0-583f9cbfa6dc HTTP/1.1
 Host: {{Host}}
 User-Agent: insomnia/9.1.1
 Accept: */*
@@ -42,16 +42,24 @@ Content-Length: 194
 }
 
 ###								PUT UPDATE REQUEST
-PUT /api/activities/1b2fc87b-d6c3-414c-b6f9-221d274dc02c HTTP/1.1
-Host: localhost:5000
+PUT /api/activities/04b4d048-d182-41ee-9bd0-583f9cbfa6dc HTTP/1.1
+Host: {{Host}}
 Content-Type: application/json
-Content-Length: 214
 
 {
-	"title": "UPDATED 200",
-	"description": "",
-	"category": "Culture",
-	"date": "{{$localDatetime iso8601 6 M}}",
-	"city": "London",
-	"venue": "Roundhouse Camden - CHANGED"
+	"title": "Mapperly",
+	// CHECK NULL WHEN REQUIRED
+		// "date": "{{$localDatetime iso8601 6 M}}",
+	// CHECK NULL
+		// "description": "",
+		// "category": "",
+		// "city": "",
+	// CHECK EMPTY
+		"venue": ""
 }
+
+
+
+
+
+
