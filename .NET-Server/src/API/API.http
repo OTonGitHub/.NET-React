@@ -18,7 +18,7 @@ User-Agent: insomnia/9.1.1
 Accept: */*
 
 ###								GET SINGLE REQUEST
-GET /api/activities/03d7d7aa-065c-4dcc-a7df-2522b0971b66 HTTP/1.1
+GET /api/activities/212ea8da-a536-430c-991f-2fc516e2ac82 HTTP/1.1
 Host: {{Host}}
 User-Agent: insomnia/9.1.1
 Accept: */*
@@ -42,7 +42,7 @@ Content-Length: 194
 }
 
 ###								PUT UPDATE REQUEST
-PUT /api/activities/04b4d048-d182-41ee-9bd0-583f9cbfa6dc HTTP/1.1
+PUT /api/activities/212ea8da-a536-430c-991f-2fc516e2ac82 HTTP/1.1
 Host: {{Host}}
 Content-Type: application/json
 
@@ -58,8 +58,7 @@ Content-Type: application/json
 		"venue": ""
 }
 
-
-
-
-
-
+###								DELETE REQUEST
+DELETE /api/activities/212ea8da-a536-430c-991f-2fc516e2ac82 HTTP/1.1
+Host: {{Host}}
+Accept: */*
