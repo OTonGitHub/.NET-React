@@ -13,13 +13,6 @@ public class ActivitiesController : BaseApiController
         return await Mediator.Send(new Listie.Query());
     }
 
-    [HttpGet("{id}")] // ~/api/activities/GUID
-    public async Task<ActionResult<Activity>> GetActivity(Guid id) // must match Root Parameter
-    {
-        Task.Delay(1000).Wait();
-        return await Mediator.Send(new Details.Query { Id = id });
-    }
-
     [HttpPost]
     // ApiController inheritence will cause the param here, "Activity" to be searched for
     // in pattern  matching, from the body of the request, and will pick it up automatically.
@@ -32,11 +25,29 @@ public class ActivitiesController : BaseApiController
         return Ok();
     }
 
+    [HttpGet("{id}")] // ~/api/activities/GUID
+    // returns 204 no content if item with key not found is not handled, becayuse:
+    // -> FindAsync returns null, which is returned by mediator, there is no error, so 20X, with nothing in the body, resulting in 204.
+    public async Task<ActionResult<Activity>> GetActivity(Guid id) // must match Root Parameter
+    {
+        Task.Delay(1000).Wait();
+        return await Mediator.Send(new Details.Query { Id = id });
+    }
+
+
     [HttpPut("{id}")]
+    // Omitted Seperate Patch Request - Personal Design Choice.
     public async Task<IActionResult> EditActivity([FromBody] Activity activity, [FromRoute] Guid id)
     {
         activity.Id = id;
         await Mediator.Send(new Edit.Command { Activity = activity });
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteActivity(Guid id)
+    {
+        await Mediator.Send(new Delete.Command { Id = id });
         return Ok();
     }
 }

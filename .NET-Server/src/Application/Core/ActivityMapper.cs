@@ -12,9 +12,3 @@ public static partial class ActivityMapper
 {
     public static partial void UpdateActivity(Activity FromActivity, Activity ToActivity);
 }
-
-
-
-
-
-
