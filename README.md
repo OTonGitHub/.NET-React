@@ -68,6 +68,9 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - run `dotnet restore` to get access to dependencies via transititive dependencies.
 - Hmm, it seems if you need nuget package between projects, and if there is a dependency on project level, install in child one, as a `dotnet restore` will pick up packages from dependencies and transitive dependencies? think.
 - Make use of refactor namespace shortcut in vscode, or resharper if using visual studio to save time and avoid wasting time renaming namespaces.
+- Cancellation Tokens:
+  - if user gives up on request and leave browser task while request is processing the `ListAsync()` or other method can stop.
+
 
 ### .NET Commands
 
