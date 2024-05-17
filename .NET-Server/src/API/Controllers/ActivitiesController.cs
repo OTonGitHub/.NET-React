@@ -7,10 +7,9 @@ namespace API.Controllers;
 public class ActivitiesController : BaseApiController
 {
     [HttpGet] // ~/api/activities
-    public async Task<ActionResult<List<Activity>>> GetActivities()
+    public async Task<ActionResult<List<Activity>>> GetActivities(CancellationToken ct)
     {
-        Task.Delay(1000).Wait();
-        return await Mediator.Send(new Listie.Query());
+        return await Mediator.Send(new Listie.Query(), ct);
     }
 
     [HttpPost]

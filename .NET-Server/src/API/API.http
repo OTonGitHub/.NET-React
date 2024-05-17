@@ -2,6 +2,7 @@
 @Host = localhost:5000
 
 // User-Agent & Accept Fields Not Required? Research.
+// CANCEL REQUEST --> CTRL + ALT + k 
 
 ### SB-1
 GET {{API_HostAddress}}/Sandbox/
@@ -11,23 +12,21 @@ Accept: application/json
 GET {{API_HostAddress}}/Sandbox/MyEndpoint/
 Accept: application/json
 
-###								GET ALL REQUEST
+###
 GET /api/activities/ HTTP/1.1
 Host: {{Host}}
-User-Agent: insomnia/9.1.1
+User-Agent: OT/4.2.1.6.9
 Accept: */*
 
 ###								GET SINGLE REQUEST
 GET /api/activities/212ea8da-a536-430c-991f-2fc516e2ac82 HTTP/1.1
 Host: {{Host}}
-User-Agent: insomnia/9.1.1
 Accept: */*
 
 ###								POST CREATE REQUEST
 POST /api/activities HTTP/1.1
 Host: localhost:5000
 Content-Type: application/json
-User-Agent: insomnia/9.1.1
 Accept: */*
 Content-Length: 194
 
