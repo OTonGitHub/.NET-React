@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import { ducks } from './Sandbox/demo';
-import DuckBox from './Sandbox/DuckBox';
-import OTCard, { OTi } from './OT/OT';
+import { ducks } from '../../features/Sandbox/demo';
+import DuckBox from '../../features/Sandbox/DuckBox';
+import OTCard, { OTi } from '../../features/OT/OT';
 import axios from 'axios';
 import { Header, List, ListItem } from 'semantic-ui-react';
 

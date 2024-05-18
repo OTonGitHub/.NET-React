@@ -71,7 +71,6 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - Cancellation Tokens:
   - if user gives up on request and leave browser task while request is processing the `ListAsync()` or other method can stop.
 
-
 ### .NET Commands
 
 - For commands to run for project setup, see `OT-ProjectSetup.sh`
@@ -131,6 +130,12 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 - can disable strict mode by removing the element in `main.tsx`
   - this is a caveat for useEffect afik, to test cleanup cycle.
 - using the dev tools, state can be directly updated, for example, in `<App />` the request response hooks states can be updated to change the list.
+- using own tooling, vite in this case, so react does not dictate folder structure etc, but vite is more opinionated.
+- public folder gets copied as is to published application, can access from root of URL apprently.
+- Assets have to import it to code etc, public folder stuff is easier to use.
+- Folder structure based on features.
+- moved index.css and app.tsx into its own folder under app/layout, and deleted app.css
+- app is for more core features, while features are the rest of the features.
 
 ### Axios
 
@@ -147,3 +152,16 @@ Neil Cummings Udemy Course on building .NET and React App - Following Tutorial
 ### CQRS Using Mediator
 
 - there is more boiler pattern than using respository class for handling query and commands, this is necessary sacrifies.
+
+### VSCode
+
+- .vscode folder
+- use ctrl + shift + p and .net: generate assets for Build and Debug
+- launch.json contains
+  - launch.json
+  - tasks.json
+- launch file contains 2 profiles, 1 for START UP debugging,
+- the other for attaching to process and debugging.
+- run using `dotnet watch --no-hot-reload --project .NET-Server/src/API run --environment "Development"`
+- then go to debugger in vscode, and attach to process, search for Project name.
+- can keep dotnet watch running, just attach debugger on rebuild.
